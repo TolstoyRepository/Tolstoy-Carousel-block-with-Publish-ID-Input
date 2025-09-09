@@ -1,0 +1,43 @@
+{% comment %}
+Tolstoy Carousel block with Publish ID Input
+{% endcomment %}
+
+
+<div class="tolstoy-custom-liquid-block">
+<!-- Add your custom HTML or Liquid code here -->
+
+    <tolstoy-carousel
+      data-tags="{% for tag in product.tags -%}{{ tag | escape }},{%- endfor %}"
+      class="tolstoy-carousel"
+      data-publish-id="{{ section.settings.publishid }}" 
+      data-product-id="{{ product.id }}">
+    </tolstoy-carousel>
+  
+</div>
+
+
+{% schema %}
+{
+"name": "Tolstoy Carousel Block",
+"settings": [
+{
+"type": "text",
+"id": "publishid",
+"label": "Publish ID",
+"default": "Publish ID"
+},
+],
+"presets": [
+{
+"name": "Tolstoy Carousel Block"
+}
+]
+}
+{% endschema %}
+
+
+{% stylesheet %}
+
+/* paste here your custom CSS */
+
+{% endstylesheet %}
